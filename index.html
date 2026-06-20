@@ -12,25 +12,26 @@
         <form action="/options" method="post" id="form1">
             <div id="form1">
                 <h2>Where are you staying?</h2>
-                <input type="checkbox" value="Different Country" required>
+                <input type="checkbox" name="Different Country" class="checkbox">
                 <label for="Different country">Different Country</label>
-                <input type="checkbox" value="Different city in my country">
+                <input type="checkbox" name="Different city in my country" class="checkbox">
                 <label for="Different city in my country">Different city in my country</label>
-                <button class="next">Next</button>
+                <button class="next" onclick="validateform(event)">Next</button>
             </div>
             <div id="form2">
-                <input type="checkbox" value="Hotel" required>
+                <input type="checkbox" name="Hotel" class="checkbox">
                 <label for="Hotel">Hotel</label>
-                <input type="checkbox" value="Hostel" required>
+                <input type="checkbox" name="Hostel" class="checkbox">
                 <label for="Hostel">Hostel</label>
-                <input type="checkbox" value="Short term rental" required>
+                <input type="checkbox" name="Short term rental" class="checkbox">
                 <label for="Short term rental">Short term rental</label>
-                <input type="checkbox" value="Friend's house" required>
+                <input type="checkbox" name="Friend's house" class="checkbox">
                 <label for="Friend's house">Friend's house</label>
-                <input type="checkbox" value="Camping" required>
+                <input type="checkbox" name="Camping" class="checkbox">
                 <label for="Camping">Camping</label>
             </div>
             <!--<div id="form3">
+                
             </div>-->
         <button type="submit" id="submit">Done</button>
         </form>

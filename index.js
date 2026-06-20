@@ -7,3 +7,11 @@ let accesory=["Sunglass","Hair tie","Jewels","Hat"];
 let swim=["Swimsuit","Beach bag","Beach towel"];
 let footwear=["Sandals","Shoes","Flip-Flops"];
 
+function validateform(event){
+    let checkboxes=document.querySelectorAll(".checkbox");
+    let onechecked = Array.from(checkboxes).some(cb => cb.checked);
+    if(!onechecked){
+        event.preventDefault();
+        alert("Please select at least one option!");
+    }
+}
