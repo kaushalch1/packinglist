@@ -1,12 +1,3 @@
-let personal_items=["Toothbrush","Toothpaste","Comb","Soap","Shampoo","Perfume","Sunscreen"];
-let electronics=["Phone","Charger","Earphones","Power Bank","Watch"];
-let utility=["Wallet","Government Id","Cash","Tickets"];
-let health=["Pain relivers","Vitamins","Fever tablets"];
-let clothes=["2 Shirts","Pants","Shorts","Dress","Innerwear"];
-let accesory=["Sunglass","Hair tie","Jewels","Hat"];
-let swim=["Swimsuit","Beach bag","Beach towel"];
-let footwear=["Sandals","Shoes","Flip-Flops"];
-
 function validateform(event){
     let checkboxes=document.querySelectorAll(".checkbox");
     let onechecked = Array.from(checkboxes).some(cb => cb.checked);
@@ -17,15 +8,74 @@ function validateform(event){
 }
 document.getElementById("packingForm").addEventListener("submit", async function (e) {
     e.preventDefault();
+    let obj = {};
+    let formdata=new FormData(this);
+    formdata.forEach((value, key) => {
+        obj[key] = value;
+    });
     try{
-        let formdata=new FormData(this);
-        await fetch("/options",{
+        let res=await fetch("/options",{
             method:'POST',
-            body:formdata
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body:JSON.stringify(obj)
         });
-        let response=await fetch("/list");
-        console.log(await response.json());
+        let result = await res.json();
+        console.log(result);
+        updatelist(result.data);
     }catch(error){
         console.log(error);
     }
 });
+let personal_items=["Toothbrush","Toothpaste","Comb","Soap","Shampoo","Perfume"];
+let electronics=["Phone","Charger","Earphones","Power Bank","Watch"];
+let utility=["Wallet","Government Id","Cash","Tickets"];
+let health=["Pain relivers","Vitamins","Fever tablets"];
+let clothes=["2 Shirts","Pants","Shorts","Dress","Innerwear"];
+let accesory=["Sunglass","Hair tie","Jewels","Hat"];
+let swim=["Swimsuit","Beach bag","Beach towel"];
+let footwear=["Sandals","Shoes","Flip-Flops"];
+
+function updatelist(list){
+    console.log(list);
+    let length=list.length(),i=0;
+    while(i<=length){
+        while(list[i]!="next"){
+            if(j===0){
+                if(list[i]==="Different Country"){
+                    utility.push("Passport","Visa","Foreign Currency","International sim");
+                }
+            }else if(j===1){
+                if(list[i]==="Hotel"){
+                    utility.push("Room tickets");
+                }else if(list[i]==="Hostel"){
+                    personal_items.push("Earplugs");
+                }else if(list[i]==="Friend's house"){
+                    footwear.push("House slippers");
+                }else if(list[i]==="Camping"){
+                    personal_items.push("Tent","Sleeping Bag","Stove");
+                    accesory.push("Bottle");
+                }
+            }else if(j===2){
+                if(list[i]=="Freezing"){
+                    clothes.push("Thermals","Gloves","Scarf","Winter boots");
+                }else if(list[i]==="Cold"){
+                    clothes.push("Jacket","Sweater","Warm socks");
+                }else if(list[i]==="Cool"){
+                    clothes.push("Light jacket","Long sleeve shirts");
+                }else if(list[i]==="Hot"){
+                    personal_items.push("Sunscreen")
+                }
+                else if(list[i]==="Rainy"){
+                    utility.push("Umbrella");
+                    clothes.push("Rain jacket");
+                    footwear.push("Waterproof shoes");
+                }
+            }
+            i++;
+        }
+        j++;
+        i++;
+    }
+}
