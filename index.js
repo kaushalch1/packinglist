@@ -1,3 +1,5 @@
+const e = require("express");
+
 function validateform(event){
     let checkboxes=document.querySelectorAll(".checkbox");
     let onechecked = Array.from(checkboxes).some(cb => cb.checked);
@@ -71,6 +73,19 @@ function updatelist(list){
                     utility.push("Umbrella");
                     clothes.push("Rain jacket");
                     footwear.push("Waterproof shoes");
+                }
+            }else if(j===3){
+                if(list[i]==="Vacation"){
+                    electronics.push("Camera");
+                }else if(list[i]==="Business/Study"){
+                    electronics.push("Laptop","Laptop charger");
+                    utility.push("Stationary");
+                }else if(list[i]==="Destination wedding"){
+                    footwear.push("Dress shoes");
+                    accesory.push("Jewelry");
+                }else if(list[i]==="Concert/Festival"){
+                    personal_items.push("Small backpack");
+                    utility.push("Event passes");
                 }
             }
             i++;

@@ -11,14 +11,13 @@
         <p>Pack your items according..</p>
 
         <form action="/options" method="post" id="packingForm">
-
             <div id="step1" class="form">
                 <h2>Where are you travelling to?</h2>
                 <input type="radio" name="travel" class="checkbox" value="Different Country">
                 <label>Different Country</label><br>
                 <input type="radio" name="travel" class="checkbox" value="Different city in my country">
                 <label>Different city in my country</label>
-                <input type="hidden" name="travelNext" value="next">
+                <input type="hidden" name="travelNext" value="next"><br>
                 <button class="next" type="button" onclick="validateform(event)">Next</button>
             </div>
             <div id="step2" class="form">
@@ -33,7 +32,7 @@
                 <label>Friend's house</label><br>
                 <input type="checkbox" name="Camping" class="checkbox" value="Camping">
                 <label>Camping</label>
-                <input type="hidden" name="stayNext" value="next">
+                <input type="hidden" name="stayNext" value="next"><br>
                 <button class="previous" type="button">Previous</button>
                 <button class="next" type="button" onclick="validateform(event)">Next</button>
             </div>
@@ -49,7 +48,48 @@
                 <label>Hot</label><br>
                 <input type="checkbox" name="Rainy" class="checkbox" value="Rainy">
                 <label>Rainy</label>
-                <input type="hidden" name="weatherNext" value="next">
+                <input type="hidden" name="weatherNext" value="next"><br>
+                <button class="previous" type="button">Previous</button>
+                <button class="next" type="button" onclick="validateform(event)">Next</button>
+            </div>
+            <div id="step4" class="form">
+                <h2>Reason for travelling?</h2>
+                <input type="radio" name="reason" value="Vacation" class="checkbox">
+                <label>Vacation</label><br>
+                <input type="radio" name="reason" value="Business/study" class="checkbox">
+                <label>Business/study</label><br>
+                <input type="radio" name="reason" value="Destination wedding" class="checkbox">
+                <label>Destination wedding</label><br>
+                <input type="radio" name="reason" value="Concert/Festival" class="checkbox">
+                <label>Concert/Festival</label>
+                <input type="hidden" name="reasonNext" value="next"><br>
+                <button class="previous" type="button">Previous</button>
+                <button type="button" class="next" onclick="validateform(event)">Next</button>
+            </div>
+            <div id="step5" class="form">
+                <h2>Pack items for?</h2>
+                <input type="checkbox" name="Female" class="checkbox" value="Female">
+                <label>Female</label><br>
+                <input type="checkbox" name="Male" class="checkbox" value="Male">
+                <label>Male</label><br>
+                <input type="checkbox" name="Baby" class="checkbox" value="Baby">
+                <label>Baby</label>
+                <input type="hidden" name="weatherNext" value="next"><br>
+                <button class="previous" type="button">Previous</button>
+                <button class="next" type="button" onclick="validateform(event)">Next</button>
+            </div>
+            <div id="step6" class="form">
+                <input type="checkbox" name="Laptop" class="checkbox" value="Laptop">
+                <label>Laptop</label><br>
+                <input type="checkbox" name="Tablet" class="checkbox" value="Tablet">
+                <label>Tablet</label><br>
+                <!--<input type="checkbox" name="Warm" class="checkbox" value="Warm">
+                <label>Warm</label><br>
+                <input type="checkbox" name="Hot" class="checkbox" value="Hot">
+                <label>Hot</label><br>
+                <input type="checkbox" name="Rainy" class="checkbox" value="Rainy">
+                <label>Rainy</label>-->
+                <input type="hidden" name="weatherNext" value="next"><br>
                 <button class="previous" type="button">Previous</button>
                 <button class="next" type="button" onclick="validateform(event)">Next</button>
             </div>
