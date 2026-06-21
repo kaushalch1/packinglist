@@ -12,9 +12,12 @@ let list;
 app.post('/options',async(req,res)=>{
     try{
         let response=Object.values(req.body);
-        //console.log(response);
         list=response;
-        res.redirect('/');
+        console.log(list,response);
+        res.status(200).json({
+            success: true,
+            data: list
+        });
     }catch(err){
         res.status(500).json({ error:'Failed to fetch the data' });
     }

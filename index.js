@@ -15,3 +15,17 @@ function validateform(event){
         alert("Please select at least one option!");
     }
 }
+document.getElementById("packingForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    try{
+        let formdata=new FormData(this);
+        await fetch("/options",{
+            method:'POST',
+            body:formdata
+        });
+        let response=await fetch("/list");
+        console.log(await response.json());
+    }catch(error){
+        console.log(error);
+    }
+});
