@@ -8,14 +8,19 @@ app.use(express.json());
 app.get('/',async(req,res)=>{
     res.sendFile(path.join(__dirname,'index.html'));
 });
+let list;
 app.post('/options',async(req,res)=>{
     try{
-        let response=Object.keys(req.body);
-        console.log(response);
+        let response=Object.values(req.body);
+        //console.log(response);
+        list=response;
         res.redirect('/');
     }catch(err){
         res.status(500).json({ error:'Failed to fetch the data' });
     }
 });
+app.get('/list',async(req,res)=>{
+    res.send(list);
+})
 const PORT=process.env.PORT||3000;
 app.listen(PORT,()=>{console.log(`Server running in Port: ${PORT}`)});
