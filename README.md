@@ -46,4 +46,5 @@ Generated packing items are organized into:
 * User accounts
 * Weather API integration
 * Drag-and-drop item management
-![Uploading image.png…]()
+<img width="1912" height="908" alt="image" src="https://github.com/user-attachments/assets/bfb8c5f1-2999-40bd-93a2-c48496a54fdd" />
+
