@@ -1,6 +1,15 @@
 *{
     padding: 10px;
     margin: 10px;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(./background.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 .next{
     border-radius: 9px;
@@ -39,6 +48,10 @@
 .done:hover{
     background-color: #3A6C76;
 }
+h1{
+    color: #BA4247;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 h2{
     color: #5E7A3D;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -75,4 +88,27 @@ input[type="radio"]:checked{
     border: #7FA461;
     box-shadow: inset 0 0 0 6px #7FA461;
     background-color: #ffffff; 
+}
+#step9{
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px;
+    max-width: 900px;
+    display: none;
+}
+#step9.active{
+    display: grid;
+}
+.category {
+    padding: 10px;
+}
+.category h3 {
+    color: #6b8e23;
+    margin-bottom: 15px;
+}
+.category label {
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
 }

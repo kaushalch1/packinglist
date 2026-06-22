@@ -15,6 +15,8 @@ function validateform(event){
         if (step< forms.length) {
             forms[step].classList.add("active");
         }
+        if(step===forms.length){
+        }
     }
 }
 function prevform(event){
@@ -57,9 +59,11 @@ let footwear=["Sandals","Shoes","Flip-Flops"];
 
 function updatelist(list){
     console.log(list);
-    let length=list.length(),i=0;
-    while(i<=length){
-        while(list[i]!="next"){
+    let length=list.length;
+    let i=0;
+    let j=0;
+    while(i<length){
+        while(i<length&&list[i]!="next"){
             if(j===0){
                 if(list[i]==="Different Country"){
                     utility.push("Passport","Visa","Foreign Currency","International sim");
@@ -93,7 +97,7 @@ function updatelist(list){
             }else if(j===3){
                 if(list[i]==="Vacation"){
                     electronics.push("Camera");
-                }else if(list[i]==="Business/Study"){
+                }else if(list[i]==="Business/study"){
                     electronics.push("Laptop","Laptop charger");
                     utility.push("Stationary");
                 }else if(list[i]==="Destination wedding"){
@@ -112,11 +116,11 @@ function updatelist(list){
                     personal_items.push("Diapers","Baby wipes","Pacifier");
                 }
             }else if(j===5){
-                if(list[i]==="Laptop"&&electronics.findIndex("Laptop")){
+                if(list[i]==="Laptop"&&electronics.includes("Laptop")){
                     electronics.push("Laptop","Laptop charger","Mouse");
                 }else if(list[i]==="Tablet"){
                     electronics.push("Tablet","Tablet charger");
-                }else if(list[i]==="Camera"&&electronics.findIndex("Camera")){
+                }else if(list[i]==="Camera"&&electronics.includes("Camera")){
                     electronics.push("Camera","Batteries","Memory card");
                 }else if(list[i]==="E-reader"){
                     electronics.push("E-reader","E-reader charger");
@@ -139,4 +143,33 @@ function updatelist(list){
         j++;
         i++;
     }
+    let final_list={
+        Personal:personal_items,
+        Electronics:electronics,
+        Utilities:utility,
+        Health:health,
+        Clothes: clothes,
+        Accessories: accesory,
+        Swim: swim,
+        Footwear: footwear
+    }
+    let html = "";
+    for(const category in final_list){
+        html += `
+        <div class="category">
+            <h3>${category}</h3>
+        `;
+        final_list[category].forEach(item => {
+            html += `
+                <label>
+                    <input type="checkbox">
+                    ${item}
+                </label><br>
+            `;
+        });
+        html += "</div>";
+    }
+    forms.forEach(form => form.classList.remove("active"));
+    document.getElementById("step9").classList.add("active");
+    document.getElementById("step9").innerHTML += html;
 }
