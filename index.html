@@ -33,7 +33,7 @@
                 <input type="checkbox" name="Camping" class="checkbox" value="Camping">
                 <label>Camping</label>
                 <input type="hidden" name="stayNext" value="next"><br>
-                <button class="previous" type="button">Previous</button>
+                <button class="previous" type="button" onclick="prevform(event)">Previous</button>
                 <button class="next" type="button" onclick="validateform(event)">Next</button>
             </div>
             <div id="step3" class="form">
@@ -49,7 +49,7 @@
                 <input type="checkbox" name="Rainy" class="checkbox" value="Rainy">
                 <label>Rainy</label>
                 <input type="hidden" name="weatherNext" value="next"><br>
-                <button class="previous" type="button">Previous</button>
+                <button class="previous" type="button" onclick="prevform(event)">Previous</button>
                 <button class="next" type="button" onclick="validateform(event)">Next</button>
             </div>
             <div id="step4" class="form">
@@ -63,7 +63,7 @@
                 <input type="radio" name="reason" value="Concert/Festival" class="checkbox">
                 <label>Concert/Festival</label>
                 <input type="hidden" name="reasonNext" value="next"><br>
-                <button class="previous" type="button">Previous</button>
+                <button class="previous" type="button" onclick="prevform(event)">Previous</button>
                 <button type="button" class="next" onclick="validateform(event)">Next</button>
             </div>
             <div id="step5" class="form">
@@ -79,7 +79,7 @@
                     <input type="checkbox" name="Baby" class="checkbox" value="Baby">Baby
                 </label>
                 <input type="hidden" name="genderNext" value="next"><br>
-                <button class="previous" type="button">Previous</button>
+                <button class="previous" type="button" onclick="prevform(event)">Previous</button>
                 <button class="next" type="button" onclick="validateform(event)">Next</button>
             </div>
             <div id="step6" class="form">
@@ -95,7 +95,7 @@
                 <input type="checkbox" name="Smart watch" class="checkbox" value="Smart watch">
                 <label>Smart watch</label>
                 <input type="hidden" name="electronicsNext" value="next"><br>
-                <button class="previous" type="button">Previous</button>
+                <button class="previous" type="button" onclick="prevform(event)">Previous</button>
                 <button class="next" type="button" onclick="validateform(event)">Next</button>
             </div>
             <div id="step7" class="form">
@@ -105,7 +105,7 @@
                 <input type="radio" name="swim" class="checkbox" value="No">
                 <label>No</label>
                 <input type="hidden" name="swimNext" value="next"><br>
-                <button class="previous" type="button">Previous</button>
+                <button class="previous" type="button" onclick="prevform(event)">Previous</button>
                 <button class="next" type="button" onclick="validateform(event)">Next</button>
             </div>
             <div id="step8" class="form">
@@ -115,10 +115,9 @@
                 <input type="radio" name="outdoor" class="checkbox" value="No">
                 <label>No</label>
                 <input type="hidden" name="outdoorNext" value="next"><br>
-                <button class="previous" type="button">Previous</button>
-                <button class="next" type="button" onclick="validateform(event)">Next</button>
+                <button class="previous" type="button" onclick="prevform(event)">Previous</button>
+                <button type="submit" id="submit" class="done">Done</button>
             </div>
-            <button type="submit" id="submit" class="done">Done</button>
         </form>
         <script src="index.js"></script>
     </body>

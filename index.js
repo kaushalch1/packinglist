@@ -1,11 +1,27 @@
-const e = require("express");
+const form1=document.getElementsByClassName("form");
+const forms=Array.from(form1);
 
+let step=0;
+forms[0].classList.add("active");
 function validateform(event){
-    let checkboxes=document.querySelectorAll(".checkbox");
+    let checkboxes = forms[step].querySelectorAll(".checkbox");
     let onechecked = Array.from(checkboxes).some(cb => cb.checked);
     if(!onechecked){
         event.preventDefault();
         alert("Please select at least one option!");
+    }else{
+        forms.forEach(form => form.classList.remove("active"));
+        step++;
+        if (step< forms.length) {
+            forms[step].classList.add("active");
+        }
+    }
+}
+function prevform(event){
+    step--;
+    if(step>=0){
+        forms.forEach(form => form.classList.remove("active"));
+        forms[step].classList.add("active");
     }
 }
 document.getElementById("packingForm").addEventListener("submit", async function (e) {
