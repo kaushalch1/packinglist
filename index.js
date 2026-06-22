@@ -87,6 +87,36 @@ function updatelist(list){
                     personal_items.push("Small backpack");
                     utility.push("Event passes");
                 }
+            }else if(j===4){
+                if(list[i]==="Female"){
+                    accesory.push("Makeup","Hair accesory");
+                }else if(list[i]==="Male"){
+                    accesory.push("Razor","Shavinng Cream");
+                }else if(list[i]==="Baby"){
+                    personal_items.push("Diapers","Baby wipes","Pacifier");
+                }
+            }else if(j===5){
+                if(list[i]==="Laptop"&&electronics.findIndex("Laptop")){
+                    electronics.push("Laptop","Laptop charger","Mouse");
+                }else if(list[i]==="Tablet"){
+                    electronics.push("Tablet","Tablet charger");
+                }else if(list[i]==="Camera"&&electronics.findIndex("Camera")){
+                    electronics.push("Camera","Batteries","Memory card");
+                }else if(list[i]==="E-reader"){
+                    electronics.push("E-reader","E-reader charger");
+                }else if(list[i]==="Smart watch"){
+                    electronics.push("Smart watch","Smart watch charger");
+                }
+            }else if(j===6){
+                if(list[i]==="Yes"){
+                    swim.push("Swimsuit","Beach Towel","Googles","Waterproof bag");
+                }
+            }else if(j===7){
+                if(list[i]==="Yes"){
+                    personal_items.push("Energy snacks");
+                    footwear.push("Sports shoes");
+                    clothes.push("Athletic clothing");
+                }
             }
             i++;
         }

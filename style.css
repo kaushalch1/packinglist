@@ -46,9 +46,29 @@ h2{
 label{
     color: #6B7280;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    gap: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
 }
 .form{
     border-radius: 15px;
     background-color: aliceblue;
     max-width: 500px;
+}
+input[type="radio"]{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+input[type="radio"]:checked{
+    border: #7FA461;
+    box-shadow: inset 0 0 0 6px #7FA461;
+    background-color: #ffffff; 
 }
