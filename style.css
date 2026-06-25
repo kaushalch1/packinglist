@@ -89,26 +89,37 @@ input[type="radio"]:checked{
     box-shadow: inset 0 0 0 6px #7FA461;
     background-color: #ffffff; 
 }
+input[type="checkbox"]{
+    width: 15px;
+    height:15px;
+    accent-color: #7FA461;
+}
 #step9{
+    position: relative;
     display: none;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 60px;
     padding: 20px;
-    max-width: 900px;
+    margin-left : 100px;
+    max-width: 1100px;
     display: none;
 }
 #step9.active{
     display: grid;
 }
-.category {
-    padding: 10px;
-}
 .category h3 {
     color: #6b8e23;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
 }
 .category label {
-    display: block;
-    padding: 8px 0;
+    display: flex;
     border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    color: #4f6787;
+}
+#result:checked{
+    color: #999;
+    text-decoration: line-through;
+    opacity: 0.7;
 }

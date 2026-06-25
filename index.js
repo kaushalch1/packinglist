@@ -111,7 +111,7 @@ function updatelist(list){
                 if(list[i]==="Female"){
                     accesory.push("Makeup","Hair accesory");
                 }else if(list[i]==="Male"){
-                    accesory.push("Razor","Shavinng Cream");
+                    accesory.push("Razor","Shaving Cream");
                 }else if(list[i]==="Baby"){
                     personal_items.push("Diapers","Baby wipes","Pacifier");
                 }
@@ -161,10 +161,10 @@ function updatelist(list){
         `;
         final_list[category].forEach(item => {
             html += `
-                <label>
+                <label class="result">
                     <input type="checkbox">
                     ${item}
-                </label><br>
+                </label>
             `;
         });
         html += "</div>";
