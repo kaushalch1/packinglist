@@ -1,6 +1,6 @@
 *{
-    padding: 10px;
-    margin: 10px;
+    padding: 0px;
+    margin: 0px;
     box-sizing: border-box;
 }
 body{
@@ -10,6 +10,8 @@ body{
     background-position: cover;
     background-attachment: fixed;
     min-height: 100vh;
+    padding: 10px;
+    margin: 10px;
 }
 .next{
     border-radius: 9px;
@@ -51,10 +53,14 @@ body{
 h1{
     color: #BA4247;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 10px;
+    margin: 10px;
 }
 h2{
     color: #5E7A3D;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 10px;
+    margin: 10px;
 }
 label{
     color: #6B7280;
@@ -63,12 +69,15 @@ label{
     cursor: pointer;
     display: inline-flex;
     align-items: center;
+    padding: 20px;
 }
 .form{
     border-radius: 15px;
     background-color: aliceblue;
     max-width: 500px;
     display :none;
+    margin: 70px;
+    padding: 30px;
 }
 .form.active{
     display: block;
@@ -95,17 +104,21 @@ input[type="checkbox"]{
     accent-color: #7FA461;
 }
 #step9{
+    background-color: white;
     position: relative;
     display: none;
     grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
-    padding: 20px;
+    /* gap: 60px; */
+    /* padding: 20px; */
     margin-left : 100px;
     max-width: 1100px;
     display: none;
 }
 #step9.active{
     display: grid;
+}
+.category{
+    margin: 11px;
 }
 .category h3 {
     color: #6b8e23;
@@ -118,8 +131,40 @@ input[type="checkbox"]{
     font-size: 1.1rem;
     color: #4f6787;
 }
-#result:checked{
+.result.checked{
     color: #999;
     text-decoration: line-through;
     opacity: 0.7;
+}
+.item-left{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.actions{
+    display: flex;
+    gap: 12px;
+    margin-left: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+}
+.actions i{
+    cursor: pointer;
+}
+#printbtn{
+    border: none;
+    cursor: pointer;
+    height: 14px;
+    width: 14px;
+}
+.toolbar{
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+.result:hover .actions {
+    opacity: 1;
+    visibility: visible;
 }

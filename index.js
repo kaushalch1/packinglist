@@ -154,6 +154,13 @@ function updatelist(list){
         Footwear: footwear
     }
     let html = "";
+    document.getElementById("step9").innerHTML=`
+        <div class="toolbar">
+        <button id="printbtn">
+            <i class="fa-solid fa-print" style="color: rgb(99, 230, 190);"></i>
+        </button>
+    </div>
+    `;
     for(const category in final_list){
         html += `
         <div class="category">
@@ -161,10 +168,16 @@ function updatelist(list){
         `;
         final_list[category].forEach(item => {
             html += `
-                <label class="result">
-                    <input type="checkbox">
-                    ${item}
-                </label>
+            <label class="result">
+                <div class="item-left result">
+                    <input type="checkbox" class="checkbox" style="gap:10px;">
+                    <p class="item-text">${item}</p>
+                </div>
+                <div class="actions">
+                    <i class="fa-regular fa-trash-can delete" style="color: rgb(186, 66, 71);"></i>
+                    <i class="fa-regular fa-pen-to-square edit" style="color: rgb(52, 52, 52);"></i>  
+                </div>
+            </label>
             `;
         });
         html += "</div>";
@@ -173,3 +186,29 @@ function updatelist(list){
     document.getElementById("step9").classList.add("active");
     document.getElementById("step9").innerHTML += html;
 }
+document.addEventListener("click",(e)=>{
+    if(e.target.classList.contains("delete")){
+        let label=e.target.closest(".result");
+        label.remove();
+    }
+    if(e.target.closest("#printbtn")){
+        window.print();
+    }
+    if(e.target.classList.contains("edit")){
+        e.preventDefault();
+        e.stopPropagation();
+        let text=e.target.closest(".result").querySelector(".item-text");
+        let update=prompt("Edit item:",text.textContent);
+        if(update!== null && update.trim()!==""){
+            text.textContent=update;
+        }
+    }
+});
+document.addEventListener("change",(e)=>{
+    if(e.target.type==="checkbox"){
+        e.target.parentElement.classList.toggle(
+            "checked",
+            e.target.checked
+        );
+    }
+})  
